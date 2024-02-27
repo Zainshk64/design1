@@ -23,11 +23,18 @@ nav{
     align-items: center;
     justify-content: space-between;
     /* background-color: aquamarine; */
-    margin: 0 7%;
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(30px);
+    /* background: rgba(212, 166, 79); */
+    z-index: 10;
+
+
 
 }
 nav .left h1{
     color: rgb(228, 174, 75);
+    margin-left: 5rcap ;
 }
 nav .right{
     /* background-color: aqua; */
@@ -43,6 +50,12 @@ nav .right a:hover{
 
 
 }
+.right .links{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
 /* main */
 .main .text h1{
     /* line-height: 10px; */
@@ -80,6 +93,88 @@ nav .right a:hover{
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding:  8% 0 0;
+}
+nav label{
+    display: none;
+  
+    
+    
+}
+nav #close{
+    display: none;
+}
+#check{
+    display: none;
+}
+
+/* nav .right .links{
+    float: right;
+    width: 100%;
+} 
+
+.dropmenu a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 2.5%;
+
+}
+.dropmenu a:hover{
+    color: rgba(255, 166, 0, 0.682);
+} */
+
+
+/* responsive navbar */
+@media screen and (max-width:995px) {
+    nav label{
+        display: block;
+        position: relative;
+        right: 20px;
+    }
+    nav .right{
+        position: absolute;
+        top: 89px;
+        display: none;
+        width: 100%;
+        margin: 0;
+
+        background-color: rgb(104, 112, 119,0.9);
+        backdrop-filter: blur(10px);
+
+        overflow: hidden;
+}
+    nav .right a{
+        display: block;
+        text-align: center;
+        margin:  3%  ;
+        transition: 0.5s ease-in;
+        opacity: 0;
+        color: white;
+    }
+    #check:checked~.icons #menu{
+        display: none;
+    }
+    #check:checked~.icons #close{
+        display: block;
+    }
+    #check:checked~ .right{
+        display: block;
+        height: auto;
+        backdrop-filter: blur(2px);
+        transition: all 0.6s ease;
+
+    }
+    #check:checked~ .right a{
+        opacity: 1;
+        transition: all 2s ease;
+        /* transform:  translateY(0);
+        transition-delay: calc(15s * var(-i%)) ; */
+    }
+
+    
+
+   
 }
 
 /*  */
@@ -88,7 +183,7 @@ nav .right a:hover{
     width: 100%;
    }
    nav .left h1{
-    font-size: 3rcap;
+    font-size: 2.4rcap;
    }
    .main .text{
     margin-bottom: 20%;
@@ -100,9 +195,16 @@ nav .right a:hover{
    .main .img img{
     height: 330px;
    }
+   .main{
+    padding: 22% 0 0;
+    /* margin-top: 10%; */
+   }
    
    .main .text h1{
     font-size: 3rcap;
+   }
+   .main .text .p2{
+    width: 90%;
    }
   
 }
